@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        box-sizing:border-box;
+        padding:0px;
+        margin:0px;
+    }
+    body{
+        height:100vh;
+        background: rgb(2,0,36);
+background: linear-gradient(207deg, rgba(2,0,36,1) 0%, rgba(9,13,121,0) 0%, rgba(0,255,67,0.5665616588432247) 100%);
+    }
+    div{
+        padding:10px;
+        margin:10px 0px;
+        font-family:Arial, Helvetica, sans-serif;
+        position:relative;
+        top:30%;
+        left:38%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+    }
+    th, td {
+  border-bottom: 1px solid rgb(224, 39, 39);
+  padding: 5px;
+}
+table{
+    border: 1px solid rgb(224, 39, 39);
+    padding: 20px;
+    font-family: serif;
+}
+    </style>
+</head>
+<body>
+
+   <div>
+    {% if lbs %}
+<table>
+    <tr>
+        <th><h1>Bucket Name</h1></th>
+        <th><h1>Creation Date</h1></th>
+    </tr>
+    {% for i in lbs %}
+    <tr>
+        <td><h2>{{i.name}}</h2></td>
+        <td><h2>{{i.creation_date}}</h2></td>
+    </tr>
+    {% endfor %}
+</table>
+    {% endif %}
+    {% if lfs %}
+    <table>
+        <tr>
+            <th><h1>Files/Folder Name</h1></th>
+        </tr>
+        {% for i in lfs %}
+        <tr>
+            <td><h2>{{i}}</h2></td>
+        </tr>
+        {% endfor %}
+    </table>
+        {% endif %}
+   </div>
+
+   
+</body>
+</html>
